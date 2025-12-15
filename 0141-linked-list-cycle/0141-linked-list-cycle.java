@@ -11,7 +11,9 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        if(head == null){
+        //brute force
+
+        /* if(head == null){
             return false;
         }
         if(head.next == null){
@@ -29,5 +31,26 @@ public class Solution {
             }
         }
         return false;
+   */
+
+    if(head == null){
+            return false;
+        }
+    if(head.next == null){
+            return false;
+        }
+
+    ListNode temp1 = head;
+    ListNode temp2 = head;
+
+    while( temp1!=null && temp1.next != null) {
+        temp1 = temp1.next.next;
+        temp2 = temp2.next;
+        if(temp1 == temp2) {
+            return true;
+        }
+    }
+    return false;
+
     }
 }
