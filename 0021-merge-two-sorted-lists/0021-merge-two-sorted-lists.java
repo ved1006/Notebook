@@ -15,10 +15,9 @@ class Solution {
                 curr.next = temp2;
                 temp2 = temp2.next;
             }
-            curr = curr.next; // 🔴 very important
+            curr = curr.next; 
         }
 
-        // attach remaining nodes
         curr.next = (temp1 != null) ? temp1 : temp2;
 
         return dummy.next;
