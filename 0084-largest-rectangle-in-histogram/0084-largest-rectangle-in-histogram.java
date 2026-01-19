@@ -35,11 +35,11 @@ class Solution {
         int[] next = new int[n];
         Stack<Integer> stack = new Stack<>();
 
-        for(int i=n;i>=0;i--) {
+        for(int i=n-1;i>=0;i--) {
             while(!stack.isEmpty() && heights[stack.peek()] >= heights[i]){
                 stack.pop();
             }
-            next[i] = stack.isEmpty() ? -1 :stack.peek();
+            next[i] = stack.isEmpty() ? n :stack.peek();
             stack.push(i);
         }
         return next;
